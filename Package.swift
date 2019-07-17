@@ -16,13 +16,15 @@ let package = Package(
   dependencies: [
     .package(
       url: "https://github.com/Alamofire/Alamofire.git",
-      from: Version(5, 0, 0, prereleaseIdentifiers: ["beta.5"])
+      from: Version(5, 0, 0, prereleaseIdentifiers: ["beta.5"]),
+    .package(url: "https://github.com/tristanhimmelman/ObjectMapper.git",
+             from: "3.5.1"),
     )
   ],
   targets: [
     .target(
       name: "AlamofireObjectMapper",
-      dependencies: ["Alamofire"],
+      dependencies: ["Alamofire","ObjectMapper"],
       path: "Source"
     )
   ],
